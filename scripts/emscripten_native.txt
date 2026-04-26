@@ -1,6 +1,6 @@
 [binaries]
-c = 'ccache emcc'
-cpp = 'ccache em++'
+c = ['ccache', 'emcc']
+cpp = ['ccache', 'em++']
 ar = 'emar'
 strip = 'emstrip'
 
