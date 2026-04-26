@@ -5,17 +5,8 @@ ar = 'emar'
 strip = 'emstrip'
 
 [built-in options]
-c_args = [
-  '-sUSE_SDL=2',
-  '-sUSE_PTHREADS=1',
-  '-sPTHREAD_POOL_SIZE=8'
-]
-
-c_link_args = [
-  '-sUSE_SDL=2',
-  '-sUSE_PTHREADS=1',
-  '-sPTHREAD_POOL_SIZE=8'
-]
+c_args = '-sUSE_SDL=2 -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=8'
+c_link_args = '-sUSE_SDL=2 -sUSE_PTHREADS=1 -sPTHREAD_POOL_SIZE=8'
 
 [host_machine]
 system = 'emscripten'
