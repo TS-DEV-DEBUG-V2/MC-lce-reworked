@@ -5,11 +5,11 @@ ar = 'emar'
 strip = 'emstrip'
 
 [built-in options]
-c_args = []
-c_link_args = []
+c_args = ['-sUSE_PTHREADS=1', '-sPTHREAD_POOL_SIZE=8']
+c_link_args = ['-sUSE_PTHREADS=1', '-sPTHREAD_POOL_SIZE=8']
 
 [host_machine]
 system = 'emscripten'
-cpu_family = 'wasm64'
-cpu = 'wasm64'
+cpu_family = 'wasm32'
+cpu = 'wasm32'
 endian = 'little'
