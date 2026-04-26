@@ -1,4 +1,4 @@
-name: Build (Emscripten 64-bit)
+name: Build Emscripten
 
 on:
   push:
@@ -33,15 +33,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      # Only native build tools (NO SDL2, NO pkg-config)
       - name: Install system dependencies
         run: |
           sudo apt-get update
           sudo apt-get install -y \
             ccache \
             ninja-build \
-            python3-pip \
-            pkg-config \
-            libsdl2-dev
+            python3-pip
           python3 -m pip install meson --break-system-packages
 
       - name: Restore ccache
@@ -67,7 +66,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: minecraft-client-emscripten-debug_exe-${{ github.sha }}
+          name: minecraft-client-emscripten-${{ github.sha }}
           path: |
             build_emscripten/Minecraft.Client/Minecraft.Client.html
             build_emscripten/Minecraft.Client/Minecraft.Client.js
